@@ -64,9 +64,9 @@ export default function Home() {
           Adicionar Material +
         </button>
       </div>
-      {showAddMaterialModal && (
+      {showAddMaterialModal && usuario &&(
         <AddMaterialModal
-          usuario={usuario as any}
+          usuario={usuario}
           onClose={() => setShowAddMaterialModal(false)}
           onSubmitSuccess={() => {
             setResultados(buscarMateriais(termo));

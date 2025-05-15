@@ -11,10 +11,7 @@ import revisaoIcon from '@/public/revisao.svg';
 import Image from 'next/image';
 import { useAuth } from '@/app/context/AuthContext';
 import { Professor } from '@/app/models/Professor';
-import { link } from 'fs';
 
-// Map of links to display in the side navigation.
-// Depending on the size of the application, this would be stored in a database.
 const allLinks = [
   { name: 'Home', href: '/home', icon: homeIcon },
   {

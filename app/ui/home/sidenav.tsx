@@ -7,7 +7,6 @@ import NavLinks from "./nav-links";
 import configIcon from "@/public/config.svg";
 import userIcon from "@/public/user.svg";
 import { useAuth } from "@/app/context/AuthContext";
-import { Professor } from "@/app/models/Professor";
 
 export default function SideNav() {
   const { usuario } = useAuth();
@@ -18,8 +17,6 @@ export default function SideNav() {
         .map((parte) => parte.charAt(0).toUpperCase() + parte.slice(1))
         .join(" ")
     : null;
-
-  const isProfessor = usuario instanceof Professor;
 
   return (
     <div className="flex h-full w-full flex-col items-center justify-between bg-glaucous gap-4 p-4">
