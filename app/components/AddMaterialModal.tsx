@@ -46,7 +46,7 @@ export default function AddMaterialModal({
 
     Swal.fire({
       title: resultado.mensagem,
-      icon: "success"
+      icon: resultado.icon,
     });
 
     if (resultado.sucesso) {

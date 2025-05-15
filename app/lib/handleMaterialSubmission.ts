@@ -4,6 +4,7 @@ import { materiais } from '@/app/data/materiais';
 import { Disciplina } from '@/app/types/Disciplina';
 import { Professor } from '@/app/models/Professor';
 import { Estudante } from '@/app/models/Estudante';
+import { SweetAlertIcon } from 'sweetalert2';
 
 export function submeterMaterial(
   usuario: Usuario,
@@ -14,7 +15,7 @@ export function submeterMaterial(
     disciplina: Disciplina;
     arquivo: File | null;
   }
-): { sucesso: boolean; mensagem: string } {
+): { sucesso: boolean; mensagem: string, icon: SweetAlertIcon } {
   if (usuario instanceof Professor) {
     const novoMaterial = new Material(
       crypto.randomUUID(),
@@ -27,10 +28,10 @@ export function submeterMaterial(
       dados.arquivo
     );
     materiais.push(novoMaterial);
-    return { sucesso: true, mensagem: 'Material enviado com sucesso!' };
+    return { sucesso: true, mensagem: 'Material enviado com sucesso!', icon: 'success' };
   } else if (usuario instanceof Estudante) {
-    return { sucesso: false, mensagem: 'Material enviado para Revisão!' };
+    return { sucesso: true, mensagem: 'Material enviado para Revisão!', icon: 'info' };
   } else {
-    return { sucesso: false, mensagem: 'Usuário inválido!' };
+    return { sucesso: false, mensagem: 'Usuário inválido!', icon: 'error' };
   }
 }
