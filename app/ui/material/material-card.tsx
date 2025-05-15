@@ -1,4 +1,3 @@
-import { Material } from "@/app/models/Material";
 import { Usuario } from "@/app/models/Usuario";
 import { Disciplina } from "@/app/types/Disciplina";
 

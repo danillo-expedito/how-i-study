@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "@/public/logo.svg";
 import NavLinks from "./nav-links";
-import clsx from "clsx";
 import configIcon from "@/public/config.svg";
 import userIcon from "@/public/user.svg";
 import { useAuth } from "@/app/context/AuthContext";

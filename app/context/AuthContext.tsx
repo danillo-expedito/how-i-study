@@ -1,6 +1,5 @@
 'use client';
 import { createContext, useContext, useState, ReactNode } from 'react';
-import { professor, estudante } from '../data/usuarios';
 import { Usuario } from '@/app/models/Usuario';
 
 type AuthContextType = {
