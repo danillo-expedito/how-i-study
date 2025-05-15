@@ -9,10 +9,13 @@ import submissaoIcon from '@/public/submissao.svg';
 import faqIcon from '@/public/faq.svg';
 import revisaoIcon from '@/public/revisao.svg';
 import Image from 'next/image';
+import { useAuth } from '@/app/context/AuthContext';
+import { Professor } from '@/app/models/Professor';
+import { link } from 'fs';
 
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
-const links = [
+const allLinks = [
   { name: 'Home', href: '/home', icon: homeIcon },
   {
     name: 'Materiais',
@@ -26,6 +29,14 @@ const links = [
 
 export default function NavLinks() {
   const pathname = usePathname();
+  const { usuario } = useAuth();
+
+  const isProfessor = usuario instanceof Professor;
+
+  const links = allLinks.filter((link) => 
+    link.name !== 'Revisão' || isProfessor
+  );
+
   return (
     <div className="flex h-full w-full flex-col p-2 px-3 items-center gap-4 justify-start">
       {links.map((link) => {

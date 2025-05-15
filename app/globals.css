@@ -10,8 +10,10 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-antiflash: #efefef;
+  --color-antiflash: #BCC4DB;
+  --color-glaucous: #7A8AB8;
   --color-ghostwhite: #f8f8f8;
+  --color-onyx: #35393C;
 }
 
 @media (prefers-color-scheme: dark) {

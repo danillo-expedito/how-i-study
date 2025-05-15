@@ -1,0 +1,1 @@
+export type Disciplina = 'matematica' | 'portugues' | 'historia' | 'geografia' | 'ciencias' | 'educacao fisica' | 'arte' | 'ingles' | 'espanhol';
